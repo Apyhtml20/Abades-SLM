@@ -1,20 +1,6 @@
----
-language: en
-license: openrail
-tags:
-  - text-generation
-  - causal-lm
-  - gpt
-  - small-language-model
-  - tinystories
-  - pytorch
-base_model: null
-pipeline_tag: text-generation
----
-
 # ABADES-SLM-15M
 
-A small GPT-style language model trained from scratch on the [TinyStories](https://huggingface.co/datasets/roneneldan/TinyStories) dataset. Designed as a lightweight, educational SLM (Small Language Model).
+A small GPT-style language model trained from scratch on the [TinyStories](https://huggingface.co/datasets/roneneldan/TinyStories) dataset. Designed as a lightweight, educational SLM (Small Language Model) using GPU NVIDEA H100
 
 ---
 
