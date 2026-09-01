@@ -94,3 +94,4 @@ print(enc.decode(output.squeeze().tolist()))
 **ApyHTML19** — built as a learning project to understand transformer training from scratch.
 
 Inspired by [nanoGPT](https://github.com/karpathy/nanoGPT) by Andrej Karpathy.
+[!image](https://github.com/Apyhtml20/Abades-SLM/blob/main/Capture%20d'%C3%A9cran%202026-08-31%20223149.png)
