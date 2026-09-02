@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="900" height="720" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a1a2e">ABADES-SLM-15M — Decoder-Only Transformer</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#555">GPT-style architecture · 6 layers · 6 heads · 384-dim embeddings · 128-token context</text>
+
+  <!-- Input tokens -->
+  <rect x="330" y="80" width="240" height="42" rx="8" fill="#fdf1d6" stroke="#d9a441" stroke-width="1.5"/>
+  <text x="450" y="106" text-anchor="middle" font-size="14" fill="#5c3d00">Input token ids  (block_size = 128)</text>
+
+  <!-- arrow -->
+  <line x1="450" y1="122" x2="450" y2="146" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Embeddings -->
+  <rect x="220" y="148" width="220" height="46" rx="8" fill="#dff3e3" stroke="#4caf78" stroke-width="1.5"/>
+  <text x="330" y="168" text-anchor="middle" font-size="12.5" fill="#1e5e37">Token Embedding</text>
+  <text x="330" y="184" text-anchor="middle" font-size="11" fill="#1e5e37">vocab_size = 50,257 → 384</text>
+
+  <text x="450" y="176" text-anchor="middle" font-size="18" fill="#444">+</text>
+
+  <rect x="460" y="148" width="220" height="46" rx="8" fill="#dff3e3" stroke="#4caf78" stroke-width="1.5"/>
+  <text x="570" y="168" text-anchor="middle" font-size="12.5" fill="#1e5e37">Positional Embedding</text>
+  <text x="570" y="184" text-anchor="middle" font-size="11" fill="#1e5e37">learned, 128 → 384</text>
+
+  <line x1="450" y1="194" x2="450" y2="214" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Transformer block container -->
+  <rect x="150" y="216" width="600" height="330" rx="14" fill="#f4f0fb" stroke="#8c6fd1" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="460" y="240" text-anchor="middle" font-size="13" font-weight="600" fill="#4b2e9e">Transformer Block  ×  6 layers</text>
+
+  <!-- LayerNorm 1 -->
+  <rect x="300" y="254" width="320" height="36" rx="7" fill="#ffffff" stroke="#8c6fd1" stroke-width="1.3"/>
+  <text x="460" y="277" text-anchor="middle" font-size="12.5" fill="#3a2570">LayerNorm</text>
+
+  <line x1="460" y1="290" x2="460" y2="308" stroke="#444" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <!-- Attention -->
+  <rect x="260" y="310" width="400" height="60" rx="8" fill="#e6eefc" stroke="#4472c4" stroke-width="1.5"/>
+  <text x="460" y="333" text-anchor="middle" font-size="13" font-weight="600" fill="#1f3d7a">Masked Multi-Head Self-Attention</text>
+  <text x="460" y="352" text-anchor="middle" font-size="11" fill="#1f3d7a">6 heads × 64 dim  ·  causal mask (each token sees only the past)</text>
+
+  <!-- residual 1 -->
+  <path d="M 240 232 C 130 232, 130 388, 240 388" fill="none" stroke="#999" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="150" y="312" text-anchor="middle" font-size="10.5" fill="#777">residual</text>
+
+  <circle cx="460" cy="388" r="10" fill="#fff" stroke="#666" stroke-width="1.3"/>
+  <text x="460" y="392" text-anchor="middle" font-size="13" fill="#333">+</text>
+  <line x1="460" y1="370" x2="460" y2="378" stroke="#444" stroke-width="1.4"/>
+  <line x1="460" y1="398" x2="460" y2="416" stroke="#444" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <!-- LayerNorm 2 -->
+  <rect x="300" y="418" width="320" height="36" rx="7" fill="#ffffff" stroke="#8c6fd1" stroke-width="1.3"/>
+  <text x="460" y="441" text-anchor="middle" font-size="12.5" fill="#3a2570">LayerNorm</text>
+
+  <line x1="460" y1="454" x2="460" y2="472" stroke="#444" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <!-- MLP -->
+  <rect x="260" y="474" width="400" height="60" rx="8" fill="#fde8ec" stroke="#c9527a" stroke-width="1.5"/>
+  <text x="460" y="497" text-anchor="middle" font-size="13" font-weight="600" fill="#7a1f3d">Feed-Forward MLP</text>
+  <text x="460" y="516" text-anchor="middle" font-size="11" fill="#7a1f3d">Linear 384→1536 · GELU · Linear 1536→384</text>
+
+  <!-- residual 2 -->
+  <path d="M 680 396 C 800 396, 800 552, 680 552" fill="none" stroke="#999" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="790" y="474" text-anchor="middle" font-size="10.5" fill="#777">residual</text>
+
+  <circle cx="460" cy="552" r="10" fill="#fff" stroke="#666" stroke-width="1.3"/>
+  <text x="460" y="556" text-anchor="middle" font-size="13" fill="#333">+</text>
+  <line x1="460" y1="534" x2="460" y2="542" stroke="#444" stroke-width="1.4"/>
+
+  <!-- loop arrow -->
+  <path d="M 700 552 C 760 552, 760 260, 700 260" fill="none" stroke="#8c6fd1" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow-purple)"/>
+  <text x="782" y="410" text-anchor="middle" font-size="11" fill="#4b2e9e">× 6</text>
+
+  <line x1="460" y1="562" x2="460" y2="576" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Final LayerNorm -->
+  <rect x="330" y="578" width="240" height="40" rx="8" fill="#ffffff" stroke="#8c6fd1" stroke-width="1.5"/>
+  <text x="450" y="602" text-anchor="middle" font-size="13" fill="#3a2570">Final LayerNorm</text>
+
+  <line x1="450" y1="618" x2="450" y2="636" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- LM head -->
+  <rect x="270" y="638" width="360" height="42" rx="8" fill="#fdf1d6" stroke="#d9a441" stroke-width="1.5"/>
+  <text x="450" y="664" text-anchor="middle" font-size="13" fill="#5c3d00">Linear head → logits over 50,257 tokens</text>
+
+  <line x1="450" y1="680" x2="450" y2="698" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <text x="450" y="714" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="600">Next-token prediction (softmax + sampling)</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#444"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#8c6fd1"/>
+    </marker>
+  </defs>
+</svg>
